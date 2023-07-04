@@ -1,0 +1,199 @@
+aside { 
+	font-size: 11px; 
+	text-align: center; 
+	position: absolute;
+	bottom: 5%;
+	left: 0%;
+	padding: 2px;
+	background-color: white;
+	color: black;
+}
+
+aside a { 
+	color: hsl(228, 45%, 44%); 
+}
+
+html {
+	font-size: 14px;
+}
+
+:root {
+    --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --vd-blue: hsl(229, 57%, 11%);
+}
+
+/*Start The Project*/
+body {
+	width: 100%;
+	min-height: 100vh;
+	font-family: "Raleway", sans-serif;
+	background: url(images/bg-desktop.png) no-repeat bottom center;
+	background-color: var(--vd-blue);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	letter-spacing: 1px;
+}
+
+main {
+	width: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 5%;
+}
+
+main div.profile-div,
+main div.storage-div {
+    background-color: var(--dark-blue);
+    padding: 40px;
+}
+
+main div.profile-div {
+	width: 35%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	row-gap: 3rem;
+	border-radius: 15px 100px 15px 15px;
+}
+
+main div.profile-div div.icons-div {
+	width: 50%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	column-gap: 10%;
+}
+
+main div.profile-div div.icons-div span {
+	padding: 10px;
+	background-color: var(--vd-blue);
+	border-radius: 10px;
+}
+
+main div.profile-div div.icons-div span img {
+	height: 20px;
+	width: auto;
+	min-width: 20px;
+	width: auto;
+}
+
+main div.storage-div {
+	border-radius: 15px;
+	width: 60%;
+	align-self: flex-end;
+	position: relative;
+}
+
+main div.storage-div div.bar {
+	width: 100%;
+	height: 20px;
+	margin: 15px 0px;
+	background-color: var(--vd-blue);
+	border-radius: 15px;
+	position: relative;
+}
+
+main div.storage-div div.bar::after {
+	content: "";
+	position: absolute;
+	height: 80%;
+	width: 81.5%;
+	background-image: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+	top: 50%;
+	left: 0.3%;
+	transform: translateY(-50%);
+	border-radius: 15px;
+	z-index: 0;
+
+}
+
+main div.storage-div div.bar::before {
+	content: "";
+	border-radius: 50%;
+	background-color: #fff;
+	height: 60%;
+	width: 12px;
+	position: absolute;
+	right: 18.8%;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+}
+
+main div.storage-div div.total-storage {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-weight: 700;
+}
+
+main div.storage-div span.storage-left {
+	background-color: #fff;
+	padding: 1rem 2rem;
+	position: relative;
+	text-align: center;
+	border-radius: 15px;
+	position: absolute;
+	top: -30%;
+	right: 10%;
+}
+
+main div.storage-div span.storage-left::before {
+	content: "";
+	background: linear-gradient(45deg, transparent 50%, #fff 0);
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+	position: absolute;
+	right: 0px;
+	bottom: -20px;
+}
+
+main div.storage-div span.storage-left span:nth-child(1) {
+	color: var(--vd-blue);
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+main div.storage-div span.storage-left span:nth-child(2) {
+	color: var(--grayish-blue);
+	font-weight: 700;
+}
+
+@media (max-width: 640px) {
+	body {
+		background: url(images/bg-mobile.png) no-repeat bottom center;
+		background-size: cover;
+	}
+
+	main {
+		flex-wrap: wrap;
+		row-gap: 30px;
+	}
+
+	main div.profile-div,
+    main div.storage-div {
+    	width: 100%;
+    }
+
+    main div.storage-div span.storage-left {
+    	left: 50%;
+    	transform: translateX(-50%);
+    	bottom: -30%;
+    	top: auto; 
+    	width: 30%;
+    	min-width: 100px;
+    }
+
+    main div.storage-div span.storage-left::before {
+    	display: none;
+    }
+}
